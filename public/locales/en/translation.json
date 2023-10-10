@@ -1,4 +1,6 @@
 {
+  "decrement": "decrement",
+  "increment": "increment",
   "throe error": "",
   "Войти": "Войти",
   "Главная": "Main",
@@ -11,7 +13,5 @@
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Страница не найдена": "Page not found",
   "Тестовый пример": "Test example",
-  "Язык": "English",
-  "increment": "increment",
-  "decrement": "decrement"
+  "Язык": "English"
 }
