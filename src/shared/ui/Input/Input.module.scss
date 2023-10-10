@@ -34,17 +34,16 @@
     animation: blink 0.7s forwards infinite;
 }
 
-
 @keyframes blink {
-    0%{
+    0% {
         opacity: 0;
     }
 
-    50%{
+    50% {
         opacity: 0.1;
     }
 
-    100%{
+    100% {
         opacity: 1;
     }
 }
