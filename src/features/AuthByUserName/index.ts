@@ -1,3 +1,9 @@
 export {
+    loginReducer,
+} from './modal/slice/loginSlice';
+export {
     LoginModal,
-} from 'features/AuthByUserName/ui/LoginModal/LoginModal';
+} from './ui/LoginModal/LoginModal';
+export {
+    LoginSchema,
+} from './modal/types/loginSchema';

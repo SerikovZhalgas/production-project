@@ -1,9 +1,12 @@
 export {
-    UserSchema,
-    User,
-} from 'entities/User/modal/types/user';
+    getUserAuthData,
+} from './model/selectors/getUserAuthData/getUserAuthData';
 
 export {
     userReducer,
     userActions,
-} from './modal/slice/userSlice';
+} from './model/slice/userSlice';
+export {
+    UserSchema,
+    User,
+} from './model/types/user';

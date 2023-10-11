@@ -16,7 +16,7 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 
-const Modal = (props: ModalProps) => {
+export const Modal = (props: ModalProps) => {
     const {
         className,
         children,
@@ -88,5 +88,3 @@ const Modal = (props: ModalProps) => {
         </Portal>
     );
 };
-
-export default Modal;
