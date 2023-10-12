@@ -6,9 +6,9 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import {
-    DynamicModuleLoaderProps,
+    DynamicModuleLoader,
     ReducerList,
-} from 'shared/lib/components/DynamicModuleLoaderProps/DynamicModuleLoaderProps';
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginUsername } from '../../modal/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../modal/selectors/getLoginPassword/getLoginPassword';
@@ -51,7 +51,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     }, [dispatch, username, password, onSuccess]);
 
     return (
-        <DynamicModuleLoaderProps
+        <DynamicModuleLoader
             removeAfterUnmount
             reducers={initialReducers}
         >
@@ -82,7 +82,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     {t('Войти')}
                 </Button>
             </div>
-        </DynamicModuleLoaderProps>
+        </DynamicModuleLoader>
     );
 });
 
