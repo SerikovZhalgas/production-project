@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Avatar } from './Avatar';
-import AvatarIcon from '../../assets/test/storybook.jpg';
 
 export default {
     title: 'shared/Avatar',
@@ -16,11 +15,11 @@ const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
     size: 150,
-    src: AvatarIcon,
+    src: 'https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:good%2Cw_1200%2Cx_2714%2Cy_1894/MTk5ODY3Mzc2MzI0MzIyOTQ0/stephen-curry.jpg',
 };
 
 export const Small = Template.bind({});
 Small.args = {
     size: 50,
-    src: AvatarIcon,
+    src: 'https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:good%2Cw_1200%2Cx_2714%2Cy_1894/MTk5ODY3Mzc2MzI0MzIyOTQ0/stephen-curry.jpg',
 };
