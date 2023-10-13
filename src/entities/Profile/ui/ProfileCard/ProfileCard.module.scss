@@ -3,6 +3,10 @@
     border: 2px solid var(--inverted-bg-color);
 }
 
+.input {
+    margin-top: 10px;
+}
+
 .loading,
 .error {
     display: flex;
