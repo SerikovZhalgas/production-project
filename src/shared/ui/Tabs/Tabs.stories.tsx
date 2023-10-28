@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { actions } from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions';
 import { Tabs } from './Tabs';
 
 export default {
@@ -31,5 +31,5 @@ Normal.args = {
         },
     ],
     value: 'tab 2',
-    onTabClick: actions('onTabClick'),
+    onTabClick: action('onTabClick'),
 };

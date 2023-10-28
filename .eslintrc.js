@@ -53,6 +53,7 @@ module.exports = {
                 ignoreAttribute: [
                     'data-testid',
                     'to',
+                    'target',
                 ],
             },
         ],
@@ -60,7 +61,7 @@ module.exports = {
             'error',
             {
                 ignoreComments: true,
-                code: 120,
+                code: 125,
             },
         ],
         'jsx-a11y/no-static-element-interactions': 'off',
@@ -70,6 +71,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
+        'arrow-body-style': 'off',
     },
     globals: {
         __IS_DEV__: true,
