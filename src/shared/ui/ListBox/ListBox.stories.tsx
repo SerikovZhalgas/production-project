@@ -9,6 +9,9 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
+    decorators: [
+        (Story) => <div style={{ padding: '100px' }}><Story /></div>,
+    ],
 } as ComponentMeta<typeof ListBox>;
 
 const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
@@ -19,7 +22,6 @@ Primary.args = {
     items: [
         { value: '123', content: 'Первый пункт' },
         { value: '1234', content: 'Второй пункт' },
-        { value: '12345', content: 'Третий пункт' },
     ],
     value: '123',
 };
@@ -30,20 +32,51 @@ ReadOnly.args = {
     items: [
         { value: '123', content: 'Первый пункт' },
         { value: '1234', content: 'Второй пункт' },
-        { value: '12345', content: 'Третий пункт' },
     ],
     value: '123',
     readonly: true,
 };
 
-export const DirectionTop = Template.bind({});
-DirectionTop.args = {
+export const DirectionTopLeft = Template.bind({});
+DirectionTopLeft.args = {
     defaultValue: 'Укажите значение',
     items: [
         { value: '123', content: 'Первый пункт' },
         { value: '1234', content: 'Второй пункт' },
-        { value: '12345', content: 'Третий пункт' },
     ],
     value: '123',
-    direction: 'top',
+    direction: 'top left',
+};
+
+export const DirectionTopRight = Template.bind({});
+DirectionTopRight.args = {
+    defaultValue: 'Укажите значение',
+    items: [
+        { value: '123', content: 'Первый пункт' },
+        { value: '1234', content: 'Второй пункт' },
+    ],
+    value: '123',
+    direction: 'top right',
+};
+
+export const DirectionBottomLeft = Template.bind({});
+DirectionBottomLeft.args = {
+    defaultValue: 'Укажите значение',
+    items: [
+        { value: '123', content: 'Первый пункт' },
+        { value: '1234', content: 'Второй пункт' },
+    ],
+    value: '123',
+    direction: 'bottom left',
+};
+
+export const DirectionBottomRight = Template.bind({});
+DirectionBottomRight.args = {
+    defaultValue: 'Укажите значение',
+    items: [
+        { value: '123', content: 'Первый пункт' },
+        { value: '1234', content: 'Второй пункт' },
+    ],
+    value: '123',
+    direction: 'bottom right',
 };
