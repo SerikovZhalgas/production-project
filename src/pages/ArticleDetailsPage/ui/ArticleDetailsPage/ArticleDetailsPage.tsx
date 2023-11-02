@@ -21,19 +21,10 @@ const reducers: ReducerList = {
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
-    const { t } = useTranslation('article-details');
     const {
         className,
     } = props;
     const { id } = useParams<{id: string}>();
-
-    if (!id) {
-        return (
-            <Page className={classNames('', {}, [className])}>
-                {t('Статья не найдена')}
-            </Page>
-        );
-    }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

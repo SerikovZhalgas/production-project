@@ -104,12 +104,7 @@ LoadingSmall.args = {
 export const LoadingBig = Template.bind({});
 LoadingBig.args = {
     isLoading: true,
-    articles: new Array(16)
-        .fill(0)
-        .map((item, index) => ({
-            ...article,
-            id: String(index),
-        })),
+    articles: [],
     view: ArticleView.BIG,
 };
 
