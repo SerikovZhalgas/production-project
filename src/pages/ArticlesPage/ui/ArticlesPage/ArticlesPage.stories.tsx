@@ -2,8 +2,10 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article';
-import { ArticleBlockType } from 'entities/Article/model/types/article';
+import {
+    ArticleSortField, ArticleType, ArticleView, ArticleBlockType,
+} from 'entities/Article';
+
 import ArticlesPage from './ArticlesPage';
 
 export default {

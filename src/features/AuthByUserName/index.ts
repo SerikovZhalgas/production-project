@@ -1,6 +1,2 @@
-export {
-    LoginModal,
-} from './ui/LoginModal/LoginModal';
-export {
-    LoginSchema,
-} from './modal/types/loginSchema';
+export { LoginModal } from './ui/LoginModal/LoginModal';
+export type { LoginSchema } from './modal/types/loginSchema';

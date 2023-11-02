@@ -4,7 +4,8 @@ export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelecto
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
-export {
-    Article, ArticleView, ArticleType, ArticleSortField,
-} from './model/types/article';
+export type { Article } from './model/types/article';
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
+export {
+    ArticleView, ArticleType, ArticleSortField, ArticleBlockType,
+} from './model/consts/consts';
