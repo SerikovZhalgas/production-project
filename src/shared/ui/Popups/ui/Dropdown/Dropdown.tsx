@@ -2,8 +2,10 @@ import { Menu } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
 import { DropDownDirection } from 'shared/types/ui';
-import { AppLink } from '../AppLink/AppLink';
+import { mapDirectionClass } from '../../styles/consts';
+import { AppLink } from '../../../AppLink/AppLink';
 import cls from './Dropdown.module.scss';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
     disabled?: boolean;
@@ -18,14 +20,7 @@ interface DropdownProps {
     direction?: DropDownDirection;
 }
 
-const mapDirectionClass: Record<DropDownDirection, string> = {
-    'bottom left': cls.optionsBottomLeft,
-    'bottom right': cls.optionsBottomRight,
-    'top left': cls.optionsTopLeft,
-    'top right': cls.optionsTopRight,
-};
-
-export const Dropdown = (props: DropdownProps) => {
+export function Dropdown(props: DropdownProps) {
     const {
         className,
         items,
@@ -36,7 +31,7 @@ export const Dropdown = (props: DropdownProps) => {
     const optionsClasses = [mapDirectionClass[direction]];
 
     return (
-        <Menu as="div" className={classNames(cls.Dropdown, {}, [className])}>
+        <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
             <Menu.Button className={cls.btn}>
                 {trigger}
             </Menu.Button>
@@ -48,7 +43,7 @@ export const Dropdown = (props: DropdownProps) => {
                             type="button"
                             disabled={item.disabled}
                             onClick={item.onClick}
-                            className={classNames(cls.item, { [cls.active]: active })}
+                            className={classNames(cls.item, { [popupCls.active]: active })}
                         >
                             {item.content}
                         </button>
@@ -71,4 +66,4 @@ export const Dropdown = (props: DropdownProps) => {
             </Menu.Items>
         </Menu>
     );
-};
+}

@@ -58,7 +58,7 @@ export const Text = memo((props: TextProps) => {
         cls[size],
         className,
     ];
-    console.log(`${dataTestId}.Paragraph`);
+
     return (
         <div className={classNames(cls.Text, {}, classes)}>
             {title && (
