@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import NotificationIcon from 'shared/assets/icons/notification-20-20.svg';
+import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
 import { Button, ButtonTheme } from '../../../Button/Button';
 import { Icon } from '../../../Icon/Icon';
 import { Popover } from './Popover';

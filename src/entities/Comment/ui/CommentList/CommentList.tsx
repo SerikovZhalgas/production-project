@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import { Text } from 'shared/ui/Text/Text';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { VStack } from 'shared/ui/Stack';
+import { Text } from '@/shared/ui/Text/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/Stack';
 import { CommentCard } from '../CommentCard/CommentCard';
 import { Comment } from '../../model/types/comment';
 

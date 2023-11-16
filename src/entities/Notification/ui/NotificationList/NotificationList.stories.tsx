@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import withMock from 'storybook-addon-mock';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Notifications } from '../../model/types/notifications';
 import { NotificationList } from './NotificationList';
 

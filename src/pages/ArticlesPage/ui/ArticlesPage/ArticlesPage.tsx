@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from 'widgets/Page/Page';
 import { useSearchParams } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from '@/widgets/Page/Page';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
