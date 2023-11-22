@@ -1,12 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
-import { EditableProfileCard } from '@/features/editableProfileCard';
+import { EditableProfileCard, getProfileError } from '@/features/editableProfileCard';
 import { ProfileRating } from '@/features/profileRating';
 import { getUserAuthData } from '@/entities/User';
-import { getProfileError } from '@/features/editableProfileCard/model/selectors/getProfileError/getProfileError';
 
 interface ProfilePageProps {
     className?: string;
