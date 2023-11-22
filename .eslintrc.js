@@ -81,7 +81,13 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
         'prod-plugin/path-checker': ['error', { alias: '@' }],
-        'prod-plugin/public-api-imports': ['error', { alias: '@' }],
+        'prod-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
