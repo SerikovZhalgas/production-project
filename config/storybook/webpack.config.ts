@@ -1,14 +1,26 @@
 import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
+import { BuildPaths } from '../build/types/config';
 
 export default ({ config }: { config: webpack.Configuration }) => {
+    const paths: BuildPaths = {
+        build: '',
+        html: '',
+        entry: '',
+        src: path.resolve(__dirname, '..', '..', 'src'),
+        locales: '',
+        buildLocales: '',
+    };
     config!.resolve!.modules = [
         path.resolve(__dirname, '../../src'),
         'node_modules',
     ];
     config!.resolve!.extensions!.push('.ts', '.tsx');
-    config.resolve!.alias = { '@': path.resolve(__dirname, '..', '..', 'src') };
+    config.resolve!.alias = {
+        ...config.resolve!.alias,
+        '@': paths.src,
+    };
 
     // eslint-disable-next-line no-param-reassign
     // @ts-ignore

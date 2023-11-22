@@ -19,8 +19,8 @@ const Template: ComponentStory<typeof NotificationList> = (args) => <Notificatio
 
 const notification: Notifications = {
     id: '1',
-    title: 'Title',
-    description: 'Description',
+    title: 'Уведомление',
+    description: 'Поставь лайк и оставь комментарий',
     href: '',
 };
 
