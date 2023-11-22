@@ -835,18 +835,18 @@
   ],
   "profile-ratings": [
     {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Хорошая статья",
       "userId": "1",
-      "profileId": "1"
+      "profileId": "2",
+      "rate": 3,
+      "feedback": "Средний профиль",
+      "id": 1
     },
     {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Хорошая статья",
-      "userId": "1",
-      "profileId": "2"
+      "userId": "2",
+      "profileId": "1",
+      "rate": 5,
+      "feedback": "Замечательный профиль!",
+      "id": 2
     }
   ]
 }
