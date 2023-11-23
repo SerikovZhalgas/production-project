@@ -82,6 +82,7 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
+        'react/destructuring-assignment': 'warn',
         'prod-plugin/path-checker': ['error', { alias: '@' }],
         'prod-plugin/public-api-imports': [
             'error',
