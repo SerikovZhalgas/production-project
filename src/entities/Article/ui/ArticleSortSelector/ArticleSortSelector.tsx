@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Select, SelectOption } from '@/shared/ui/Select';
@@ -14,7 +14,7 @@ interface ArticleSortSelectorProps {
     onChangeSort: (newSort: ArticleSortField) => void;
 }
 
-export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
+export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
     const { t } = useTranslation();
     const {
         className,
@@ -52,13 +52,13 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-            <Select
+            <Select<ArticleSortField>
                 options={sortOptions}
                 label={t('Сортировать ПО')}
                 value={sort}
                 onChange={onChangeSort}
             />
-            <Select
+            <Select<SortOrder>
                 options={orderOptions}
                 label={t('по')}
                 value={order}
@@ -67,4 +67,4 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
             />
         </div>
     );
-});
+};
