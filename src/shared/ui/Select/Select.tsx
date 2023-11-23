@@ -1,7 +1,7 @@
-import { useTranslation } from 'react-i18next';
 import { ChangeEvent, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Select.module.scss';
+import { typedMemo } from '@/shared/lib/typedMemo/typedMemo';
 
 export interface SelectOption<T extends string> {
     value: T;
@@ -17,8 +17,7 @@ interface SelectProps<T extends string> {
     readonly?: boolean;
 }
 
-export const Select = <T extends string>(props: SelectProps<T>) => {
-    const { t } = useTranslation();
+export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
     const {
         className,
         label,
@@ -57,4 +56,4 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
             </select>
         </div>
     );
-};
+});
