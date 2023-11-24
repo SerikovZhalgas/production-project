@@ -19,7 +19,11 @@ const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
 export const Light = Template.bind({});
 Light.args = {};
 Light.decorators = [StoreDecorator({
-
+    user: {
+        authData: {
+            avatar: 'https://yt3.ggpht.com/ytc/AKedOLTYUJxG8Hu036PQ_TXpMLq2fG8Kj8NZI4h0lbn_3g=s900-c-k-c0x00ffffff-no-rj',
+        },
+    },
 })];
 
 export const Dark = Template.bind({});
@@ -29,5 +33,9 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 export const AuthNavbar = Template.bind({});
 AuthNavbar.args = {};
 AuthNavbar.decorators = [StoreDecorator({
-    user: { authData: {} },
+    user: {
+        authData: {
+            avatar: 'https://yt3.ggpht.com/ytc/AKedOLTYUJxG8Hu036PQ_TXpMLq2fG8Kj8NZI4h0lbn_3g=s900-c-k-c0x00ffffff-no-rj',
+        },
+    },
 })];
