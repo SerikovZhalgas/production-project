@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     ArticleSortField,
@@ -25,6 +25,7 @@ import cls from './ArticlesPageFilters.module.scss';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ArticlesPageFiltersProps {
     className?: string;
@@ -35,7 +36,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const {
         className,
     } = props;
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const view = useSelector(getArticlesPageView);
     const order = useSelector(getArticlesPageOrder);
     const sort = useSelector(getArticlesPageSort);
