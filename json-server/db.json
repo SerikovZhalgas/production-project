@@ -724,6 +724,15 @@
         "MANAGER"
       ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "profile": [
@@ -792,61 +801,22 @@
       "rate": 3,
       "feedback": "",
       "id": "bcPnbbZ"
-    },
-    {
-      "articleId": "3",
-      "userId": "1",
-      "id": "faU8Tkk"
-    },
-    {
-      "articleId": "3",
-      "userId": "1",
-      "id": "0E23uCn"
-    },
-    {
-      "articleId": "3",
-      "userId": "1",
-      "id": "y5zhMmS"
-    },
-    {
-      "articleId": "3",
-      "userId": "1",
-      "id": "0WPyh0c"
-    },
-    {
-      "articleId": "3",
-      "userId": "1",
-      "id": "BdxMI5D"
-    },
-    {
-      "userId": "1",
-      "articleId": "3",
-      "rate": 3,
-      "feedback": "asd",
-      "id": "psCYUV8"
-    },
-    {
-      "userId": "1",
-      "articleId": "4",
-      "rate": 3,
-      "feedback": "asd",
-      "id": "Y39-s_o"
     }
   ],
   "profile-ratings": [
     {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
       "userId": "1",
-      "profileId": "2",
-      "rate": 3,
-      "feedback": "Средний профиль",
-      "id": 1
+      "profileId": "1"
     },
     {
-      "userId": "2",
-      "profileId": "1",
-      "rate": 5,
-      "feedback": "Замечательный профиль!",
-      "id": 2
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }
