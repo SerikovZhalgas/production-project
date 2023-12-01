@@ -8,18 +8,24 @@ const recommendationsAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
 });
 
-export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
-    (state) => state.articlesDetailsPage?.recommendations || recommendationsAdapter.getInitialState(),
-);
+export const getArticleRecommendations =
+    recommendationsAdapter.getSelectors<StateSchema>(
+        (state) =>
+            state.articlesDetailsPage?.recommendations ||
+            recommendationsAdapter.getInitialState(),
+    );
 
 export const articleDetailsPageRecommendationsSlice = createSlice({
     name: 'articleDetailsPageRecommendationsSlice',
-    initialState: recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>({
-        isLoading: false,
-        error: undefined,
-        ids: [],
-        entities: {},
-    }),
+    initialState:
+        recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>(
+            {
+                isLoading: false,
+                error: undefined,
+                ids: [],
+                entities: {},
+            },
+        ),
     reducers: {},
     extraReducers: (builder) => {
         builder
@@ -27,16 +33,10 @@ export const articleDetailsPageRecommendationsSlice = createSlice({
                 state.error = '';
                 state.isLoading = true;
             })
-            .addCase(
-                fetchArticleRecommendations.fulfilled,
-                (
-                    state,
-                    action,
-                ) => {
-                    state.isLoading = false;
-                    recommendationsAdapter.setAll(state, action.payload);
-                },
-            )
+            .addCase(fetchArticleRecommendations.fulfilled, (state, action) => {
+                state.isLoading = false;
+                recommendationsAdapter.setAll(state, action.payload);
+            })
             .addCase(fetchArticleRecommendations.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
@@ -44,6 +44,5 @@ export const articleDetailsPageRecommendationsSlice = createSlice({
     },
 });
 
-export const {
-    reducer: articleDetailsPageRecommendationsReducer,
-} = articleDetailsPageRecommendationsSlice;
+export const { reducer: articleDetailsPageRecommendationsReducer } =
+    articleDetailsPageRecommendationsSlice;

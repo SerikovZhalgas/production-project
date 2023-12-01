@@ -14,9 +14,7 @@ interface NotificationButtonProps {
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const isMobile = useDevice();
 
     const [isOpen, setIsOpen] = useState(false);
@@ -37,24 +35,24 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
 
     return (
         <div>
-            {isMobile
-                ? (
-                    <>
-                        {trigger}
-                        <Drawer isOpen={isOpen} onClose={onClickClose}>
-                            <NotificationList />
-                        </Drawer>
-                    </>
-                )
-                : (
-                    <Popover
-                        className={classNames(cls.NotificationButton, {}, [className])}
-                        direction="bottom left"
-                        trigger={trigger}
-                    >
-                        <NotificationList className={cls.notifications} />
-                    </Popover>
-                )}
+            {isMobile ? (
+                <>
+                    {trigger}
+                    <Drawer isOpen={isOpen} onClose={onClickClose}>
+                        <NotificationList />
+                    </Drawer>
+                </>
+            ) : (
+                <Popover
+                    className={classNames(cls.NotificationButton, {}, [
+                        className,
+                    ])}
+                    direction="bottom left"
+                    trigger={trigger}
+                >
+                    <NotificationList className={cls.notifications} />
+                </Popover>
+            )}
         </div>
     );
 });

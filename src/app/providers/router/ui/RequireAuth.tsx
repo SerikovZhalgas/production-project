@@ -10,10 +10,7 @@ interface RequireAuthProps {
     roles?: UserRole[];
 }
 export function RequireAuth(props: RequireAuthProps) {
-    const {
-        roles,
-        children,
-    } = props;
+    const { roles, children } = props;
     const auth = useSelector(getUserAuthData);
     const userRoles = useSelector(getUserRoles);
     const location = useLocation();
@@ -29,11 +26,19 @@ export function RequireAuth(props: RequireAuthProps) {
     }, [roles, userRoles]);
 
     if (!auth) {
-        return <Navigate to={getRouteMain()} state={{ from: location }} replace />;
+        return (
+            <Navigate to={getRouteMain()} state={{ from: location }} replace />
+        );
     }
 
     if (!hasRequiredRoles) {
-        return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />;
+        return (
+            <Navigate
+                to={getRouteForbidden()}
+                state={{ from: location }}
+                replace
+            />
+        );
     }
 
     return children;

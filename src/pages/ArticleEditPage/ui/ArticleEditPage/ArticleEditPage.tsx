@@ -11,10 +11,8 @@ interface ArticleEditPageProps {
 
 const ArticleEditPage = (props: ArticleEditPageProps) => {
     const { t } = useTranslation();
-    const {
-        className,
-    } = props;
-    const { id } = useParams<{id: string}>();
+    const { className } = props;
+    const { id } = useParams<{ id: string }>();
     const isEdit = Boolean(id);
 
     return (

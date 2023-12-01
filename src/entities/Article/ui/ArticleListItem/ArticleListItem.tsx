@@ -10,9 +10,7 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { AppLink } from '@/shared/ui/AppLink';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import {
-    Article, ArticleTextBLock,
-} from '../../model/types/article';
+import { Article, ArticleTextBLock } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppImage } from '@/shared/ui/AppImage';
@@ -27,12 +25,7 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const { t } = useTranslation();
-    const {
-        className,
-        article,
-        view,
-        target,
-    } = props;
+    const { className, article, view, target } = props;
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const views = (
@@ -50,12 +43,18 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         return (
             <div
                 data-testid="ArticleListItem"
-                className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+                className={classNames(cls.ArticleListItem, {}, [
+                    className,
+                    cls[view],
+                ])}
             >
                 <Card>
                     <div className={cls.header}>
                         <Avatar size={30} src={article.user.avatar} />
-                        <Text text={article.user.username} className={cls.username} />
+                        <Text
+                            text={article.user.username}
+                            className={cls.username}
+                        />
                         <Text text={article.createdAt} className={cls.date} />
                     </div>
                     <Text text={article.title} className={cls.title} />
@@ -67,16 +66,17 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         className={cls.img}
                     />
                     {textBLock && (
-                        <ArticleTextBlockComponent block={textBLock} className={cls.textBlock} />
+                        <ArticleTextBlockComponent
+                            block={textBLock}
+                            className={cls.textBlock}
+                        />
                     )}
                     <div className={cls.footer}>
                         <AppLink
                             target={target}
                             to={getRouteArticleDetails(article.id)}
                         >
-                            <Button
-                                theme={ButtonTheme.OUTLINE}
-                            >
+                            <Button theme={ButtonTheme.OUTLINE}>
                                 {t('Читать далее')}
                             </Button>
                         </AppLink>
@@ -92,7 +92,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             data-testid="ArticleListItem"
             target={target}
             to={getRouteArticleDetails(article.id)}
-            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+            className={classNames(cls.ArticleListItem, {}, [
+                className,
+                cls[view],
+            ])}
         >
             <Card>
                 <div className={cls.imageWrapper}>

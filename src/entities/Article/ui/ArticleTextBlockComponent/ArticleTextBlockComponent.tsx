@@ -7,24 +7,31 @@ import cls from './ArticleTextBlockComponent.module.scss';
 
 interface ArticleTextBlockComponentProps {
     className?: string;
-    block: ArticleTextBLock
+    block: ArticleTextBLock;
 }
 
-export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentProps) => {
-    const { t } = useTranslation();
-    const {
-        className,
-        block,
-    } = props;
+export const ArticleTextBlockComponent = memo(
+    (props: ArticleTextBlockComponentProps) => {
+        const { t } = useTranslation();
+        const { className, block } = props;
 
-    return (
-        <div className={classNames(cls.ArticleTextBlockComponent, {}, [className])}>
-            {block.title && (
-                <Text title={block.title} className={cls.title} />
-            )}
-            {block.paragraphs.map((paragraph, index) => (
-                <Text key={paragraph} text={paragraph} className={cls.paragraph} />
-            ))}
-        </div>
-    );
-});
+        return (
+            <div
+                className={classNames(cls.ArticleTextBlockComponent, {}, [
+                    className,
+                ])}
+            >
+                {block.title && (
+                    <Text title={block.title} className={cls.title} />
+                )}
+                {block.paragraphs.map((paragraph, index) => (
+                    <Text
+                        key={paragraph}
+                        text={paragraph}
+                        className={cls.paragraph}
+                    />
+                ))}
+            </div>
+        );
+    },
+);

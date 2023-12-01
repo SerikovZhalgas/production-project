@@ -29,7 +29,9 @@ describe('Пользовательзаходит на страницу стат�
         cy.get('[data-selected=true]').should('have.length', 5);
     });
     it('И ставит оценку (пример со стабом на фикстурах)', () => {
-        cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
+        cy.intercept('GET', '**/articles/*', {
+            fixture: 'article-details.json',
+        });
         cy.getByTestId('ArticleDetails.Info');
         cy.getByTestId('RatingCard').scrollIntoView();
         cy.setRate(5, 'feedback');

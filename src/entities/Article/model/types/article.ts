@@ -19,11 +19,14 @@ export interface ArticleImageBLock extends ArticleBLockBase {
 
 export interface ArticleTextBLock extends ArticleBLockBase {
     type: ArticleBlockType.TEXT;
-    title?: string
-    paragraphs: string[]
+    title?: string;
+    paragraphs: string[];
 }
 
-export type ArticleBlock = ArticleCodeBLock | ArticleImageBLock | ArticleTextBLock
+export type ArticleBlock =
+    | ArticleCodeBLock
+    | ArticleImageBLock
+    | ArticleTextBLock;
 
 export interface Article {
     id: string;

@@ -11,20 +11,28 @@ export default {
         backgroundColor: { control: 'color' },
     },
     decorators: [
-        (Story) => <div style={{ padding: '100px' }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: '100px' }}>
+                <Story />
+            </div>
+        ),
     ],
 } as ComponentMeta<typeof AvatarDropdown>;
 
-const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
+const Template: ComponentStory<typeof AvatarDropdown> = (args) => (
+    <AvatarDropdown {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({
-    user: {
-        authData: {
-            id: '1',
-            username: 'admin123',
-            avatar: 'https://i.pinimg.com/736x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg',
+Normal.decorators = [
+    StoreDecorator({
+        user: {
+            authData: {
+                id: '1',
+                username: 'admin123',
+                avatar: 'https://i.pinimg.com/736x/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg',
+            },
         },
-    },
-})];
+    }),
+];

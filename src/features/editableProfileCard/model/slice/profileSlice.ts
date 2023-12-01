@@ -38,10 +38,7 @@ export const profileSlice = createSlice({
             })
             .addCase(
                 fetchProfileData.fulfilled,
-                (
-                    state,
-                    action: PayloadAction<Profile>,
-                ) => {
+                (state, action: PayloadAction<Profile>) => {
                     state.isLoading = false;
                     state.data = action.payload;
                     state.form = action.payload;
@@ -57,10 +54,7 @@ export const profileSlice = createSlice({
             })
             .addCase(
                 updateProfileData.fulfilled,
-                (
-                    state,
-                    action: PayloadAction<Profile>,
-                ) => {
+                (state, action: PayloadAction<Profile>) => {
                     state.isLoading = false;
                     state.data = action.payload;
                     state.form = action.payload;
