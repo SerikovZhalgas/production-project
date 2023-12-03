@@ -1,5 +1,5 @@
 import path from 'path';
-import { DefinePlugin } from 'webpack';
+import { DefinePlugin, RuleSetRule } from 'webpack';
 import { Configuration } from 'mini-css-extract-plugin';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
@@ -44,6 +44,8 @@ export default {
         // eslint-disable-next-line no-param-reassign
         // @ts-ignore
         config!.module!.rules = config.module!.rules!.map(
+            // eslint-disable-next-line no-param-reassign
+            // @ts-ignore
             (rule: RuleSetRule) => {
                 if (/svg/.test(rule.test as string)) {
                     return { ...rule, exclude: /\.svg$/i };

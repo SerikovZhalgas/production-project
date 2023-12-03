@@ -26,6 +26,10 @@ const article: Article = {
     user: {
         id: '1',
         username: 'zhalgas',
+        features: {
+            isCounterEnabled: false,
+            isArticleRatingEnabled: true,
+        },
     },
     createdAt: '26.02.2022',
     type: [ArticleType.IT],
