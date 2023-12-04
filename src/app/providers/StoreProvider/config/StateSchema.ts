@@ -7,7 +7,7 @@ import {
     ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { ScrollSaveSchema } from 'src/shared/ui/ScrollSave';
+import { ScrollSaveSchema } from '@/features/ScrollSave';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUserName';

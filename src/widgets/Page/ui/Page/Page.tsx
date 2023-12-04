@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import {
     getScrollSaveScrollByPath,
     scrollSaveActions,
-} from '@/shared/ui/ScrollSave';
+} from '@/features/ScrollSave';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
