@@ -1,6 +1,6 @@
 import { rtkApi } from '@/shared/api/rtkApi';
 import { JsonSettings } from '../model/types/jsonSettings';
-import { User } from '../model/types/user';
+import { User } from '..';
 
 interface SetJsonSettingsArg {
     userId: string;
@@ -16,8 +16,16 @@ const userApi = rtkApi.injectEndpoints({
                 body: { jsonSettings },
             }),
         }),
+        getUserDataById: build.query<User, string>({
+            query: (userId) => ({
+                url: `/users/${userId}`,
+                method: 'GET',
+            }),
+        }),
     }),
 });
 
 export const setJsonSettingsMutation =
     userApi.endpoints.setJsonSettings.initiate;
+
+export const getUserDataByIdQuery = userApi.endpoints.getUserDataById.initiate;
