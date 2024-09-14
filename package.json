@@ -34,7 +34,7 @@
     },
     "lint-staged": {
         "**/*.{ts,tsx}": [
-            "prettier --check",
+            "prettier --list-different",
             "eslint"
         ]
     },
@@ -57,6 +57,7 @@
         "@storybook/manager-webpack5": "^6.5.13",
         "@storybook/react": "^6.5.13",
         "@storybook/testing-library": "^0.0.13",
+        "@svgr/plugin-svgo": "^8.1.0",
         "@svgr/webpack": "^6.2.1",
         "@testing-library/jest-dom": "^5.16.2",
         "@testing-library/react": "^13.4.0",
