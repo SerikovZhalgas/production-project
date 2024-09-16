@@ -4,7 +4,7 @@
 }
 
 .normal {
-    background: var(--card-bg);
+    background: var(--dark-bg-redesigned);
 }
 
 .light {
@@ -13,6 +13,14 @@
 
 .outlined {
     border: 1px solid var(--primary-color);
+}
+
+.normal {
+    border-radius: 12px;
+}
+
+.normal {
+    border-radius: 40px;
 }
 
 .max {
