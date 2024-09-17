@@ -1,3 +1,11 @@
+.trigger {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
 .options {
     background: var(--dark-bg-redesigned);
     position: absolute;
@@ -8,4 +16,8 @@
 
 .item {
     padding: 10px 20px;
+}
+
+.selected {
+    background: var(--light-bg-redesigned);
 }

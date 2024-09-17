@@ -2,10 +2,10 @@ import { Fragment, ReactNode, useMemo } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownDirection } from '@/shared/types/ui';
-import { mapDirectionClass } from '../../styles/consts';
 import { HStack } from '../../../../redesigned/Stack';
 import { Button } from '../../../Button/Button';
 import cls from './ListBox.module.scss';
+import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { Icon } from '../../../Icon';
@@ -29,14 +29,14 @@ interface ListBoxProps<T extends string> {
 
 export function ListBox<T extends string>(props: ListBoxProps<T>) {
     const {
-        items,
         className,
+        items,
         value,
         defaultValue,
         onChange,
         readonly,
+        direction = 'bottom right',
         label,
-        direction = 'bottom left',
     } = props;
 
     const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
@@ -58,7 +58,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                 value={value}
                 onChange={onChange}
             >
-                <HListBox.Button className={popupCls.trigger}>
+                <HListBox.Button className={cls.trigger}>
                     <Button
                         variant="filled"
                         disabled={readonly}
