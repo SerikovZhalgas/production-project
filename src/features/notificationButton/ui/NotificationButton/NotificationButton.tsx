@@ -1,4 +1,5 @@
 import { memo, useState } from 'react';
+import { Drawer as DrawerDeprecated } from '@/shared/ui/redesigned/Drawer';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Popover as PopoverDeprecated } from '@/shared/ui/deprecated/Popups';
 import {
@@ -9,7 +10,6 @@ import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { NotificationList } from '@/entities/Notification';
 import NotificationIconDeprecated from '@/shared/assets/icons/notification-20-20.svg';
 import NotificationIcon from '@/shared/assets/icons/notification.svg';
-import { Drawer as DrawerDeprecated } from '@/shared/ui/deprecated/Drawer';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
 import cls from './NotificationButton.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
