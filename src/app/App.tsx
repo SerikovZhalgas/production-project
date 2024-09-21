@@ -6,9 +6,10 @@ import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInited, initAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { PageLoader } from '@/widgets/PageLoader';
 
 const App = () => {
     const dispatch = useAppDispatch();
@@ -20,7 +21,18 @@ const App = () => {
         }
     }, [dispatch, inited]);
 
-    if (!inited) return <PageLoader />;
+    if (!inited)
+        return (
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <div id="app" className={classNames('app', {}, [])}>
+                        <AppLoaderLayout />
+                    </div>
+                }
+                off={<PageLoader />}
+            />
+        );
 
     return (
         <ToggleFeatures
@@ -43,7 +55,6 @@ const App = () => {
                             header={<Navbar />}
                             content={<AppRouter />}
                             sidebar={<Sidebar />}
-                            toolbar={<div>asdas</div>}
                         />
                     </Suspense>
                 </div>
