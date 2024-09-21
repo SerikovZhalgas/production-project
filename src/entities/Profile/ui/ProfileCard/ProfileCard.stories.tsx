@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ProfileCard } from './ProfileCard';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
     title: 'entities/ProfileCard',
@@ -16,8 +17,7 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => (
     <ProfileCard {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
+const primaryArgs = {
     data: {
         username: 'admin',
         age: 22,
@@ -29,6 +29,13 @@ Primary.args = {
         avatar: 'https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:good%2Cw_1200%2Cx_2714%2Cy_1894/MTk5ODY3Mzc2MzI0MzIyOTQ0/stephen-curry.jpg',
     },
 };
+
+export const Primary = Template.bind({});
+Primary.args = primaryArgs;
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = primaryArgs;
+PrimaryRedesigned.decorators = [NewDesignDecorator];
 
 export const withError = Template.bind({});
 withError.args = { error: 'error' };

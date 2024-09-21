@@ -8,7 +8,6 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ScrollSaveSchema } from '@/features/ScrollSave';
-import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUserName';
 import { ArticleDetailsSchema } from '@/entities/Article';
@@ -19,7 +18,6 @@ import { rtkApi } from '@/shared/api/rtkApi';
 import { ProfileSchema } from '@/features/editableProfileCard';
 
 export interface StateSchema {
-    counter: CounterSchema;
     user: UserSchema;
     scrollSave: ScrollSaveSchema;
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
