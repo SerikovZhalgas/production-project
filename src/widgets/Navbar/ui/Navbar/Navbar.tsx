@@ -3,7 +3,8 @@ import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+
+import { Button } from '@/shared/ui/redesigned/Button';
 import { LoginModal } from '@/features/AuthByUserName';
 import { getUserAuthData } from '@/entities/User';
 import { NotificationButton } from '@/features/notificationButton';
@@ -53,7 +54,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             on={
                 <header className={classNames(cls.Navbar, {}, [className])}>
                     <Button
-                        theme={ButtonTheme.CLEAR_INVERTED}
+                        variant="clear"
                         className={cls.links}
                         onClick={onShowModal}
                     >
