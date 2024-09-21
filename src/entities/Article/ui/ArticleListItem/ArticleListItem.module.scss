@@ -75,7 +75,7 @@
     .infoWrapper {
         display: flex;
         align-items: center;
-        margin-right: 8px;
+        margin-top: 8px;
     }
 
     .types p {
@@ -108,7 +108,9 @@
     }
 
     &.SMALL {
-        width: 240px;
-        height: 350px;
+        .card {
+            height: 350px;
+            width: 240px;
+        }
     }
 }

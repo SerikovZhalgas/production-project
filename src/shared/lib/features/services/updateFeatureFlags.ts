@@ -13,30 +13,27 @@ export const updateFeatureFlag = createAsyncThunk<
     void,
     UpdateFeatureFlagOptions,
     ThunkConfig<string>
->(
-    'articleDetails/updateFeatureFlag',
-    async ({ newFeatures, userId }, thunkApi) => {
-        const { dispatch, rejectWithValue } = thunkApi;
+>('features/updateFeatureFlag', async ({ newFeatures, userId }, thunkApi) => {
+    const { dispatch, rejectWithValue } = thunkApi;
 
-        const allFeatures = {
-            ...getAllFeatureFlags(),
-            ...newFeatures,
-        };
+    const allFeatures = {
+        ...getAllFeatureFlags(),
+        ...newFeatures,
+    };
 
-        try {
-            await dispatch(
-                updateFeatureFlagsMutation({
-                    userId,
-                    features: allFeatures,
-                }),
-            );
+    try {
+        await dispatch(
+            updateFeatureFlagsMutation({
+                userId,
+                features: allFeatures,
+            }),
+        );
 
-            setFeatureFLags(allFeatures);
-
-            return undefined;
-        } catch (e) {
-            console.log(e);
-            return rejectWithValue('error');
-        }
-    },
-);
+        setFeatureFLags(allFeatures);
+        window.location.reload();
+        return undefined;
+    } catch (e) {
+        console.log(e);
+        return rejectWithValue('error');
+    }
+});
