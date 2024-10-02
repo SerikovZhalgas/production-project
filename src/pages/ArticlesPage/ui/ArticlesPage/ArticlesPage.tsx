@@ -13,7 +13,6 @@ import { initArticlesPage } from '../../model/services/initArticlesPage/initArti
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import cls from './ArticlesPage.module.scss';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
-import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
@@ -52,7 +51,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                     className={classNames(cls.ArticlesPage, {}, [className])}
                 >
                     <ArticleInfiniteList className={cls.list} />
-                    <ArticlePageGreeting />
                 </Page>
             }
         />
