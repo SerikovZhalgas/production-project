@@ -1,13 +1,7 @@
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import CopyIcon from '@/shared/assets/icons/copy-20-20.svg';
 import CopyIconNew from '@/shared/assets/icons/copy.svg';
-import {
-    Button as ButtonDeprecated,
-    ButtonTheme,
-} from '../../deprecated/Button/Button';
 import cls from './Code.module.scss';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { Icon } from '../Icon';
 
 interface CodeProps {
@@ -23,33 +17,14 @@ export const Code = memo((props: CodeProps) => {
     }, [text]);
 
     return (
-        <ToggleFeatures
-            feature="isAppRedesigned"
-            on={
-                <pre
-                    className={classNames(cls.CodeRedesigned, {}, [className])}
-                >
-                    <Icon
-                        Svg={CopyIconNew}
-                        clickable
-                        onClick={onCopy}
-                        className={cls.copyBtn}
-                    />
-                    <code>{text}</code>
-                </pre>
-            }
-            off={
-                <pre className={classNames(cls.Code, {}, [className])}>
-                    <ButtonDeprecated
-                        onClick={onCopy}
-                        className={cls.copyBtn}
-                        theme={ButtonTheme.CLEAR}
-                    >
-                        <CopyIcon className={cls.copyIcon} />
-                    </ButtonDeprecated>
-                    <code>{text}</code>
-                </pre>
-            }
-        />
+        <pre className={classNames(cls.CodeRedesigned, {}, [className])}>
+            <Icon
+                Svg={CopyIconNew}
+                clickable
+                onClick={onCopy}
+                className={cls.copyBtn}
+            />
+            <code>{text}</code>
+        </pre>
     );
 });

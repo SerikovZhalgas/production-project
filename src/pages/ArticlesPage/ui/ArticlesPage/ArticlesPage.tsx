@@ -14,9 +14,7 @@ import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPag
 import cls from './ArticlesPage.module.scss';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import { ArticlePageGreeting } from '@/features/articlePageGreeting';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
-import { DeprecatedArticlesPage } from '../DeprecatedArticlePage/DeprecatedArticlesPage';
 import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 
@@ -44,27 +42,19 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     });
 
     const content = (
-        <ToggleFeatures
-            feature="isAppRedesigned"
-            on={
-                <StickyContentLayout
-                    left={<ViewSelectorContainer />}
-                    right={<FiltersContainer />}
-                    content={
-                        <Page
-                            data-testid="ArticlesPage"
-                            onScrollEnd={onLoadNextPart}
-                            className={classNames(cls.ArticlesPage, {}, [
-                                className,
-                            ])}
-                        >
-                            <ArticleInfiniteList className={cls.list} />
-                            <ArticlePageGreeting />
-                        </Page>
-                    }
-                />
+        <StickyContentLayout
+            left={<ViewSelectorContainer />}
+            right={<FiltersContainer />}
+            content={
+                <Page
+                    data-testid="ArticlesPage"
+                    onScrollEnd={onLoadNextPart}
+                    className={classNames(cls.ArticlesPage, {}, [className])}
+                >
+                    <ArticleInfiniteList className={cls.list} />
+                    <ArticlePageGreeting />
+                </Page>
             }
-            off={<DeprecatedArticlesPage onLoadNextPart={onLoadNextPart} />}
         />
     );
 

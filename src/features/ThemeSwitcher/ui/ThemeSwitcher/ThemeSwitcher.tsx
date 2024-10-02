@@ -3,8 +3,6 @@ import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import ThemeIcon from '@/shared/assets/icons/theme.svg';
 import { saveJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { DeprecatedThemeSwitcher } from '../DeprecatedThemeSwitcher/DeprecatedThemeSwitcher';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface ThemeSwitcherProps {
@@ -21,11 +19,5 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
         });
     }, [dispatch, toggleTheme]);
 
-    return (
-        <ToggleFeatures
-            feature="isAppRedesigned"
-            on={<Icon Svg={ThemeIcon} clickable onClick={onToggleHandler} />}
-            off={<DeprecatedThemeSwitcher onToggleHandler={onToggleHandler} />}
-        />
-    );
+    return <Icon Svg={ThemeIcon} clickable onClick={onToggleHandler} />;
 });

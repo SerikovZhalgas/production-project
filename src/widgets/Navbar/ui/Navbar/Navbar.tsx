@@ -3,16 +3,12 @@ import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
-
 import { Button } from '@/shared/ui/redesigned/Button';
 import { LoginModal } from '@/features/AuthByUserName';
 import { getUserAuthData } from '@/entities/User';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import cls from './Navbar.module.scss';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { DeprecatedAuthNavbar } from '../DeprecatedAuthNavbar/DeprecatedAuthNavbar';
-import { DeprecatedNavbar } from '../DeprecatedNavbar/DeprecatedNavbar';
 
 interface NavbarProps {
     className?: string;
@@ -33,48 +29,23 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     if (authData) {
         return (
-            <ToggleFeatures
-                feature="isAppRedesigned"
-                on={
-                    <header className={classNames(cls.Navbar, {}, [className])}>
-                        <HStack gap="16" className={cls.actions}>
-                            <NotificationButton />
-                            <AvatarDropdown />
-                        </HStack>
-                    </header>
-                }
-                off={<DeprecatedAuthNavbar />}
-            />
+            <header className={classNames(cls.Navbar, {}, [className])}>
+                <HStack gap="16" className={cls.actions}>
+                    <NotificationButton />
+                    <AvatarDropdown />
+                </HStack>
+            </header>
         );
     }
 
     return (
-        <ToggleFeatures
-            feature="isAppRedesigned"
-            on={
-                <header className={classNames(cls.Navbar, {}, [className])}>
-                    <Button
-                        variant="clear"
-                        className={cls.links}
-                        onClick={onShowModal}
-                    >
-                        {t('Войти')}
-                    </Button>
-                    {isAuthModal && (
-                        <LoginModal
-                            isOpen={isAuthModal}
-                            onClose={onCloseModal}
-                        />
-                    )}
-                </header>
-            }
-            off={
-                <DeprecatedNavbar
-                    isAuthModal={isAuthModal}
-                    onCloseModal={onCloseModal}
-                    onShowModal={onShowModal}
-                />
-            }
-        />
+        <header className={classNames(cls.Navbar, {}, [className])}>
+            <Button variant="clear" className={cls.links} onClick={onShowModal}>
+                {t('Войти')}
+            </Button>
+            {isAuthModal && (
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            )}
+        </header>
     );
 });
